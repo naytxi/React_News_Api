@@ -1,12 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useContext } from "react";
+import { NewsContext } from "../context/NewsContext";
 
 const ListNews = () => {
-  const [news, setNews] = useState([]);
-
-  useEffect(() => {
-    const storedNews = JSON.parse(localStorage.getItem("news")) || [];
-    setNews(storedNews);
-  }, []);
+  const { news } = useContext(NewsContext);
 
   return (
     <section className="news-list">
@@ -15,7 +11,7 @@ const ListNews = () => {
       {news.map((item, index) => (
         <article key={index} className="news-item">
           <h3>{item.title}</h3>
-          <p>{item.content}</p>
+          <p>{item.description || item.content}</p>
         </article>
       ))}
     </section>

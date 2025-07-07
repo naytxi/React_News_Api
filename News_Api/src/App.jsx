@@ -4,11 +4,12 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Add from './components/Form';
 import ListNews from './components/ListNews';
+import NewsProvider from "./context/NewsContext";
 import './App.css'; 
 
 function App() {
   return (
-    <>
+    <NewsProvider>
       <Router>
         <Header />
         <main>
@@ -20,7 +21,7 @@ function App() {
         </main>
         <Footer />
       </Router>
-    </>
+    </NewsProvider>
   );
 }
 

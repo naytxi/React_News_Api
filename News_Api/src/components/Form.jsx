@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import '../App.css';
+import { NewsContext } from "../context/NewsContext";
+import "../App.css";
 
 const Add = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    content: "",
-  });
-
+  const [formData, setFormData] = useState({ title: "", content: "" });
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const { addNews } = useContext(NewsContext);
   const navigate = useNavigate();
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
     if (name === "title" && value.trim().length < 3) {
@@ -26,15 +23,10 @@ const Add = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const storedNews = JSON.parse(localStorage.getItem("news")) || [];
-    const updatedNews = [...storedNews, formData];
-
-    localStorage.setItem("news", JSON.stringify(updatedNews));
-
-    navigate("/list");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addNews(formData);
+    navigate("/list"); 
   };
 
   return (
