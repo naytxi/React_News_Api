@@ -1,0 +1,19 @@
+.home-container {
+  padding: 3rem 2rem;
+  font-family: 'Merriweather', serif;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.home-container h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  color: #555;
+}
