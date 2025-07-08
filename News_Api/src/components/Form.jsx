@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { NewsContext } from "../context/NewsContext";
-import './Form.css';
+import './Form.scss';
+
+
 
 const Add = () => {
   const [formData, setFormData] = useState({ title: "", content: "" });

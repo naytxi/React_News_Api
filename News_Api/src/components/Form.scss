@@ -1,0 +1,86 @@
+$page-font: 'Merriweather', serif;
+$red-base: #ca1f1f;
+$red-dark: #b92525;
+$red-focus: #c0392b;
+$red-hover: #a93226;
+$red-error: #e74c3c;
+$bg-light: #f8f5f5;
+$bg-dark: #222;
+$border-light: #444;
+$border-disabled: #555;
+$btn-text-color: white;
+
+.page-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  font-family: $page-font;
+  color: $red-base;
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $red-dark;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: $red-base;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: $bg-light;
+    color: $bg-light; 
+    border: 1px solid $border-light;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: $page-font;
+    resize: vertical;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    &:focus {
+      border-color: $red-focus;
+      outline: none;
+      background-color: $bg-dark;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+    background-color: $red-focus;
+    color: $btn-text-color;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:disabled {
+      background-color: $border-disabled;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: $red-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    color: $red-error;
+    font-weight: 600;
+  }
+}

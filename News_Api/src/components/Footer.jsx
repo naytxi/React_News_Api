@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./Footer.css"
+import "./Footer.scss"
 
-const Footer = () => <footer className="footer">
+
+const Footer = () =>
+ <footer className="footer">
     <p>© 2025 News Hub</p>
     </footer>;
 
